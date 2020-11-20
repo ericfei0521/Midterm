@@ -11,9 +11,9 @@ function App() {
   return (
     <div style={{ display: 'flex' }}>
       {lists.map((list) => (
-        <TodoItem title={list} />
+        <TodoItem title={list.name} id={list.id} />
       ))}
-      <TodoInput addList={addList} />
+      <TodoInput addList={addList} title="Addlist" />
     </div>
   )
 }
