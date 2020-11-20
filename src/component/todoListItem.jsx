@@ -2,10 +2,15 @@ import React, { useState } from 'react'
 import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
 import TodoInput from './todoInput'
 import '../style/list.css'
-const TodoItem = ({ title }) => {
+const TodoItem = ({ title,id,editList,deleteList}) => {
   let [lists, setLists] = useState([])
-  const addList = (title) => {
-    setLists([...lists, title])
+  let [name,setName] = useState(title)
+  let [show,setShow] = useState(false)
+  const addList = (cardtitle) => {
+    setLists([...lists, cardtitle])
+  }
+  const handleList = ()=>{
+    setShow(!show)
   }
 
   function handleDrag (result){
@@ -22,7 +27,18 @@ const TodoItem = ({ title }) => {
   }
   return (
     <div className="list">
-      <h1>{title}</h1>
+            {show ? (
+        <div>
+          <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
+          <button onClick={()=>{setShow(false);editList(name,id)}}>
+            Submit
+          </button>
+          <button onClick={() =>deleteList(id)}>X</button>
+        </div>
+      ) : (
+        <h1 onClick={handleList}>{title}</h1>
+      )}
+
       <DragDropContext onDragEnd={handleDrag}>
         <Droppable droppableId="List">
           {(provided) => (
