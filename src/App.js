@@ -9,11 +9,11 @@ function App() {
     setLists([...lists, title])
   }
   return (
-    <div>
-      <TodoInput addList={addList} />
+    <div style={{ display: 'flex' }}>
       {lists.map((list) => (
         <TodoItem title={list} />
       ))}
+      <TodoInput addList={addList} />
     </div>
   )
 }

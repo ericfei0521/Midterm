@@ -1,0 +1,15 @@
+.list {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  border: 1px solid gray;
+  padding: 5px;
+}
+.list > .listItem {
+  box-sizing: border-box;
+  width: 80%;
+  border: 1px solid gray;
+  padding: 5px;
+  margin: 5px;
+}
