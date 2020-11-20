@@ -7,7 +7,9 @@ const TodoItem = ({ title,id,editList,deleteList}) => {
   let [name,setName] = useState(title)
   let [show,setShow] = useState(false)
   const addList = (cardtitle) => {
-    setLists([...lists, cardtitle])
+    if(cardtitle.name){
+      setLists([...lists, cardtitle])
+    }
   }
   const handleList = ()=>{
     setShow(!show)
