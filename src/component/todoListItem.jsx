@@ -31,9 +31,9 @@ const TodoItem = ({ title,id,editList,deleteList}) => {
         <div>
           <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
           <button onClick={()=>{setShow(false);editList(name,id)}}>
-            Submit
+            Edit
           </button>
-          <button onClick={() =>deleteList(id)}>X</button>
+          <button className="danger" onClick={() =>deleteList(id)}>Delete</button>
         </div>
       ) : (
         <h1 onClick={handleList}>{title}</h1>
@@ -50,7 +50,7 @@ const TodoItem = ({ title,id,editList,deleteList}) => {
                     {...p.draggableProps} 
                     {...p.dragHandleProps} 
                     ref={p.innerRef}>
-                    <h1>{list.name}</h1>
+                    <h2>{list.name}</h2>
                     </div>
                   )}
                 </Draggable>

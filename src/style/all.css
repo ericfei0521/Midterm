@@ -1,0 +1,36 @@
+.all {
+  display: flex;
+  flex-wrap: wrap;
+  font-family: 'Noto Sans TC', '微軟正黑體', '新細明體', arial, sans-serif;
+  font-size: 16px;
+  margin: 0 auto;
+}
+.all > .inputarea {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 0 auto;
+  background-color: lightcyan;
+  padding: 30px;
+}
+.all > .listplace {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin: 0 auto;
+}
+button {
+  background-color: mediumseagreen;
+  margin: 2px;
+  font-size: large;
+  border-radius: 15px;
+  border: 1px solid gray;
+  outline: none;
+  cursor: pointer;
+}
+input {
+  border-radius: 10px;
+  outline: none;
+}
+.danger {
+  background-color: rgb(255, 105, 125);
+}

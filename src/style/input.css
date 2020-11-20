@@ -1,0 +1,11 @@
+.input {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+}
+.input > .submit {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

@@ -1,13 +1,15 @@
 import React, { useState } from 'react'
 import { nanoid } from 'nanoid'
+import '../style/input.css'
 function TodoInput({ addList, title }) {
   let [name, setName] = useState()
   let [show, setShow] = useState(false)
   return (
     <div>
       {show ? (
-        <div>
-          <input type="text" onChange={(e) => setName(e.target.value)} value={name} />
+        <div className="input">
+          <div className="submit">
+          <input  type="text" onChange={(e) => setName(e.target.value)} value={name} />
           <button
             onClick={() => {
               addList({
@@ -20,10 +22,15 @@ function TodoInput({ addList, title }) {
           >
             Submit
           </button>
-          <button onClick={() => setShow(false)}>X</button>
+          <button className=" danger" onClick={() => setShow(false)}>Cancel</button>
+          </div>
         </div>
       ) : (
-        <button onClick={() => setShow(true)}>{title}</button>
+        <div className="input">
+          <button  onClick={() => setShow(true)}>
+            {title}
+          </button>
+        </div>
       )}
     </div>
   )
